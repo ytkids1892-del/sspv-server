@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sspv-messenger
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    region: frankfurt
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
